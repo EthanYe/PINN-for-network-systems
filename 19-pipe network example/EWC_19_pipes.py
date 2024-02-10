@@ -36,10 +36,10 @@ z=0 # elevation at the demand node
 demand_magnitude = 0.2 / np.sqrt(50-z)
 ''' EWC simulation'''
 # build EWC model
-name='seven_pipe_'+str(reachnum)+'_reach'
+name='19_pipe_'+str(reachnum)+'_reach'
 pipe = Pipe(no, up, down, l, D, f, a, reach) 
 model = EWC(Res, h2, pipe, demand_node=demand_node, demand=0,dm=demand_magnitude,z=z, t1=t1,
-            tt=tt, name='19_pipe_'+str(reachnum)+'_reach', runSteady=False)  # initial model
+            tt=tt, name=name, runSteady=True)  # initial model
 # run simulation
 model.transient()
 ''' save results'''
